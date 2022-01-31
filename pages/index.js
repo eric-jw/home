@@ -1,37 +1,63 @@
-import { Box, Container, Heading, Image } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { Button, Box, Container, Heading, Image, Link, useColorModeValue } from '@chakra-ui/react'
+import Section from '../components/section'
+import Paragraph from '../components/paragraph'
+import { ChevronRightIcon } from '@chakra-ui/icons'
+import { BioSection, BioYear } from '../components/bio'
 
 const Page = () => {
     return (
         <Container>
-        <Box borderRadius="lg" bg="red" p={3} mt={2} mb={4}>
-            Hello, I&apos;m a full-stack developer based in San Jose!
-        </Box>
+            <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mt={2} mb={4} align="center">
+                Hello, I&apos;m a full-stack developer based in San Jose!
+            </Box>
+            <Box display={{ md: 'flex' }}>
+                <Box flexGrow={1}>
+                    <Heading as="h2" variant="page-title">
+                        Eric J Whitehead
+                    </Heading>
+                    <p>Writer, Developer</p>
+                </Box>
+                <Box 
+                    flexShrink={0} 
+                    mt={{ base: 4, md: 0 }} 
+                    ml={{ md: 6 }} 
+                    align="center"
+                >
+                    <Image 
+                        borderColor="whiteAlpha.800"
+                        borderWidth={2}
+                        borderStyle="solid"
+                        maxWidth="100px"
+                        display="inline-block"
+                        borderRadius="full"
+                        src="/images/smoke.png"
+                        alt="Profile Image"
+                    />
+                </Box>
+            </Box>
 
-        <Box display={{ md: 'flex' }}>
-            <Box flexGrow={1}>
-                <Heading as="h2" variant="page-title">
-                    Eric J Whitehead
+            <Section delay={0.1}>
+                <Heading as ="h3" variant="section-title">
+                    Work
                 </Heading>
-                <p>Writer, Developer</p>
-            </Box>
-            <Box 
-                flexShrink={0} 
-                mt={{ base: 4, md: 0 }} 
-                ml={{ md: 6 }} 
-                align="center"
-            >
-                <Image 
-                    borderColor="whiteAlpha.800"
-                    borderWidth={2}
-                    borderStyle="solid"
-                    maxWidth="100px"
-                    display="inline-block"
-                    borderRadius="full"
-                    src="public/images/smoke.png"
-                    alt="Profile Image"
-                />
-            </Box>
-        </Box>
+                <Paragraph>
+                    I am LFW!
+                </Paragraph>
+                <Box align="center" my={4}>
+                    <NextLink href="/works">
+                        <Button rightIcon={<ChevronRightIcon />} colorScheme="red">
+                            My Portfolio
+                        </Button>
+                    </NextLink>
+                </Box>
+            </Section>
+
+            <Section delay={0.2}>
+                <Heading as="h3" variant="section-title">
+                    
+                </Heading>
+            </Section>
         </Container>
     )
 }
