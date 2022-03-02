@@ -9,7 +9,7 @@ const Page = () => {
     return (
         <Container>
             <Box borderRadius="lg" bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')} p={3} mt={2} mb={4} align="center">
-                Hello, I&apos;m a full-stack developer based in San Jose!
+                Hello, I&apos;m a full-stack developer based in Santa Cruz!
             </Box>
             <Box display={{ md: 'flex' }}>
                 <Box flexGrow={1}>
@@ -55,8 +55,20 @@ const Page = () => {
 
             <Section delay={0.2}>
                 <Heading as="h3" variant="section-title">
-                    
+                    Bio
                 </Heading>
+                <BioSection>
+                    <BioYear>1995</BioYear>
+                    Born in San Jose, CA
+                </BioSection>
+                <BioSection>
+                    <BioYear>2020</BioYear>
+                    Completed a Full Stack bootcamp at UT-A
+                </BioSection>
+                <BioSection>
+                    <BioYear>2017-Present</BioYear>
+                    Worked at Trader Joe's
+                </BioSection>
             </Section>
         </Container>
     )
